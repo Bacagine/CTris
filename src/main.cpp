@@ -1,3 +1,12 @@
+/* main.cpp: Main file of CTris
+ * 
+ * Developed by Mitchel Paulin <Mitchel0022@gmail.com>
+ * 
+ * Date of last modification: 18/02/2021
+ */
+
+#include <iostream>
+#include <cstring>
 #include <curses.h>
 #include <vector>
 #include <unistd.h>
@@ -7,194 +16,205 @@
 #include "windows/game_window.h"
 #include "../include/constants.h"
 #include "../include/all_blocks.h"
+#include "../include/ctris.h"
 
-void initColors();
-bool canMoveRight(Block block, GameWindow &win);
-bool canMoveLeft(Block block, GameWindow &win);
-bool canMoveDown(Block block, GameWindow &win);
-Block *createNewBlock(int num);
-int linesToScore(int lines);
-
-int main(void)
+int main(int argc, char **argv)
 {
-	setlocale(LC_CTYPE, ""); //allow unicode characters
-	initscr();
-	cbreak(); //disable buffering
-	start_color(); //enable colors
-	initColors();
-	noecho();
-	curs_set(FALSE); //hide cursor
+    if(argc == 2){
+        if(!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help")){
+            std::cout << VERSION << std::endl;
+            puts(HELP);
+        }
+        else if(!strcmp(argv[1], "-v") || !strcmp(argv[1], "--version")){
+            std::cout << VERSION << std::endl;
+        }
+        else if(!strcmp(argv[1], "--license")){
+            std::cout << LICENSE << std::endl;
+        }
+        else if(!strcmp(argv[1], "-dev") || !strcmp(argv[1], "--developers")){
+            std::cout << DEV_INFO << std::endl;
+        }
+    }
+    else{
+        setlocale(LC_CTYPE, ""); //allow unicode characters
+        initscr();
+        cbreak(); //disable buffering
+        start_color(); //enable colors
+        initColors();
+        noecho();
+        curs_set(FALSE); //hide cursor
 
-	//Initialize random number generator
-	std::random_device dev;
-	std::mt19937 rng(dev());
-	std::uniform_int_distribution<std::mt19937::result_type> dist6(1, BLOCK_TYPES);
+        //Initialize random number generator
+        std::random_device dev;
+        std::mt19937 rng(dev());
+        std::uniform_int_distribution<std::mt19937::result_type> dist6(1, BLOCK_TYPES);
 
-	//Construct windows
-	BorderWindow UIWindow = BorderWindow(HEIGHT, WIDTH, GAME_WIDTH, 0);
-	GameWindow gameWindow = GameWindow(HEIGHT, GAME_WIDTH, 0, 0);
-	keypad(UIWindow.getWin(), TRUE); //enable keypad inputs from user
-	gameWindow.render();
+        //Construct windows
+        BorderWindow UIWindow = BorderWindow(HEIGHT, WIDTH, GAME_WIDTH, 0);
+        GameWindow gameWindow = GameWindow(HEIGHT, GAME_WIDTH, 0, 0);
+        keypad(UIWindow.getWin(), TRUE); //enable keypad inputs from user
+        gameWindow.render();
 
-	//Prevent wgetch from being a blocking call
-	nodelay(UIWindow.getWin(), TRUE);
+        //Prevent wgetch from being a blocking call
+        nodelay(UIWindow.getWin(), TRUE);
 
-	//Create the two initial pieces
-	Block *curPiece = createNewBlock(dist6(rng));
-	Block *nextPiece = createNewBlock(dist6(rng));
-	UIWindow.addNextBlock(*nextPiece);
+        //Create the two initial pieces
+        Block *curPiece = createNewBlock(dist6(rng));
+        Block *nextPiece = createNewBlock(dist6(rng));
+        UIWindow.addNextBlock(*nextPiece);
 
-	int score = 0;
-	int downTimer = 0; //Once this hits a certain number of loops we move the block down
-	int userInput;
-	bool gameOver = false;
+        int score = 0;
+        int downTimer = 0; //Once this hits a certain number of loops we move the block down
+        int userInput;
+        bool gameOver = false;
 
-	//Game loop
-	for (;;)
-	{
-		usleep(CLOCK_SPEED);
-		
-		//Process user input
-		userInput = wgetch(UIWindow.getWin());
+        //Game loop
+        for (;;)
+        {
+            usleep(CLOCK_SPEED);
+            
+            //Process user input
+            userInput = wgetch(UIWindow.getWin());
 
-		//Check for control inputs 
-		if (userInput == 'r' || userInput == 'R')
-		{
-			//Reset game
-			delete (curPiece);
-			delete (nextPiece);
-			curPiece = createNewBlock(dist6(rng));
-			nextPiece = createNewBlock(dist6(rng));
-			score = 0;
-			gameWindow.initWindow();
-			UIWindow.initWindow();
-			UIWindow.addNextBlock(*nextPiece);
-			gameOver = false;
-			continue;
-		}
-		else if (userInput == EXIT_KEY)
-		{
-			break; // exit
-		}
+            //Check for control inputs 
+            if (userInput == 'r' || userInput == 'R')
+            {
+                //Reset game
+                delete (curPiece);
+                delete (nextPiece);
+                curPiece = createNewBlock(dist6(rng));
+                nextPiece = createNewBlock(dist6(rng));
+                score = 0;
+                gameWindow.initWindow();
+                UIWindow.initWindow();
+                UIWindow.addNextBlock(*nextPiece);
+                gameOver = false;
+                continue;
+            }
+            else if (userInput == EXIT_KEY)
+            {
+                break; // exit
+            }
 
-		if (gameOver)
-		{
-			continue;
-		}
+            if (gameOver)
+            {
+                continue;
+            }
 
-		//Erase block so we can redraw it in new location
-		gameWindow.eraseBlock(*curPiece);
+            //Erase block so we can redraw it in new location
+            gameWindow.eraseBlock(*curPiece);
 
-		//Check for block movement inputs 
-		if (userInput == 'd' || userInput == 'D' || userInput == KEY_RIGHT)
-		{
-			if (canMoveRight(*curPiece, gameWindow))
-			{
-				curPiece->moveRight();
-			}
-		}
-		else if (userInput == 'a' || userInput == 'A' || userInput == KEY_LEFT)
-		{
-			if (canMoveLeft(*curPiece, gameWindow))
-			{
-				curPiece->moveLeft();
-			}
-		}
-		else if (userInput == 'w' || userInput == 'W' || userInput == KEY_UP)
-		{
-			Block *rotatedPiece = curPiece->rotate();
-			//If we can rotate the piece
-			if (!gameWindow.blockCollides(*rotatedPiece))
-			{
-				gameWindow.eraseBlock(*curPiece);
-				delete (curPiece);
-				curPiece = rotatedPiece;
-			}
-			else //Could not rotate piece
-			{
-				delete (rotatedPiece);
-			}
-		}
-		else if (userInput == 's' || userInput == 'S' || userInput == KEY_DOWN)
-		{
-			if (canMoveDown(*curPiece, gameWindow))
-			{
-				curPiece->moveDown();
-				downTimer = 0; //Reset down timer
-			}
-		}
-		else if (userInput == ' ') //spacebar pressed
-		{
-			while (canMoveDown(*curPiece, gameWindow))
-			{
-				curPiece->moveDown();
-			}
-			downTimer = BLOCK_FALL_SPEED; //block reached bottom, force spawn
-		}
+            //Check for block movement inputs 
+            if (userInput == 'd' || userInput == 'D' || userInput == KEY_RIGHT)
+            {
+                if (canMoveRight(*curPiece, gameWindow))
+                {
+                    curPiece->moveRight();
+                }
+            }
+            else if (userInput == 'a' || userInput == 'A' || userInput == KEY_LEFT)
+            {
+                if (canMoveLeft(*curPiece, gameWindow))
+                {
+                    curPiece->moveLeft();
+                }
+            }
+            else if (userInput == 'w' || userInput == 'W' || userInput == KEY_UP)
+            {
+                Block *rotatedPiece = curPiece->rotate();
+                //If we can rotate the piece
+                if (!gameWindow.blockCollides(*rotatedPiece))
+                {
+                    gameWindow.eraseBlock(*curPiece);
+                    delete (curPiece);
+                    curPiece = rotatedPiece;
+                }
+                else //Could not rotate piece
+                {
+                    delete (rotatedPiece);
+                }
+            }
+            else if (userInput == 's' || userInput == 'S' || userInput == KEY_DOWN)
+            {
+                if (canMoveDown(*curPiece, gameWindow))
+                {
+                    curPiece->moveDown();
+                    downTimer = 0; //Reset down timer
+                }
+            }
+            else if (userInput == ' ') //spacebar pressed
+            {
+                while (canMoveDown(*curPiece, gameWindow))
+                {
+                    curPiece->moveDown();
+                }
+                downTimer = BLOCK_FALL_SPEED; //block reached bottom, force spawn
+            }
 
-		//Move block down
-		if (downTimer > BLOCK_FALL_SPEED)
-		{
-			if (canMoveDown(*curPiece, gameWindow))
-			{
-				curPiece->moveDown();
-				downTimer = 0;
-			}
-			else
-			{
-				//Piece reached bottom, check if player looses
-				//If any block is still "in play" then continue
-				bool lost = true;
-				for (Square *s : curPiece->getSquares())
-				{
-					if (s->getRow() < BOARD_TOP - 2)
-					{
-						lost = false;
-					}
-				}
+            //Move block down
+            if (downTimer > BLOCK_FALL_SPEED)
+            {
+                if (canMoveDown(*curPiece, gameWindow))
+                {
+                    curPiece->moveDown();
+                    downTimer = 0;
+                }
+                else
+                {
+                    //Piece reached bottom, check if player looses
+                    //If any block is still "in play" then continue
+                    bool lost = true;
+                    for (Square *s : curPiece->getSquares())
+                    {
+                        if (s->getRow() < BOARD_TOP - 2)
+                        {
+                            lost = false;
+                        }
+                    }
 
-				if (lost)
-				{
-					gameWindow.fillScreen();
-					gameWindow.render();
-					gameOver = true;
-					continue;
-				}
+                    if (lost)
+                    {
+                        gameWindow.fillScreen();
+                        gameWindow.render();
+                        gameOver = true;
+                        continue;
+                    }
 
-				gameWindow.drawBlock(*curPiece);
+                    gameWindow.drawBlock(*curPiece);
 
-				//check if we need to remove any lines first
-				int lines = gameWindow.removeCompletedLines();
+                    //check if we need to remove any lines first
+                    int lines = gameWindow.removeCompletedLines();
 
-				//update score
-				if (lines > 0)
-				{
-					score += linesToScore(lines);
-					UIWindow.updateScore(score);
-				}
+                    //update score
+                    if (lines > 0)
+                    {
+                        score += linesToScore(lines);
+                        UIWindow.updateScore(score);
+                    }
 
-				//setup for next block
-				delete (curPiece);
-				curPiece = nextPiece;
-				nextPiece = createNewBlock(dist6(rng));
-				UIWindow.addNextBlock(*nextPiece);
-				continue;
-			}
-		}
-		else
-		{
-			downTimer++;
-		}
+                    //setup for next block
+                    delete (curPiece);
+                    curPiece = nextPiece;
+                    nextPiece = createNewBlock(dist6(rng));
+                    UIWindow.addNextBlock(*nextPiece);
+                    continue;
+                }
+            }
+            else
+            {
+                downTimer++;
+            }
 
-		//re render screen with new block location
-		gameWindow.drawBlock(*curPiece);
-		gameWindow.render();
-	}
+            //re render screen with new block location
+            gameWindow.drawBlock(*curPiece);
+            gameWindow.render();
+        }
 
-	//Exit game
-	delete (curPiece);
-	delete (nextPiece);
-	endwin();
+        //Exit game
+        delete (curPiece);
+        delete (nextPiece);
+        endwin();
+    }
 	return 0;
 }
 

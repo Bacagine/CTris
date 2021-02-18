@@ -16,5 +16,9 @@ Install the ncurses lib
 
 ncurses is a barebones API that allows you to write text-based user interfaces in a terminal-independent manner.
 
-# Compiling
-Run `make install DESTDIR=<destination>` in the root folder. 
+# Build and install
+Run:
+
+`$ compile.sh`
+
+`# make install`

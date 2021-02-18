@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.1
+Name=CTris
+Type=Application
+Comment=A Tetris clone written in C++
+Terminal=true
+Exec=ctris
+Icon=htop
+Categories=ConsoleOnly
+Keywords=tetris;
