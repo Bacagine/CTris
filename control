@@ -1,7 +1,7 @@
 Package: ctris
 Version: 1.1
 Architecture: all
-Depends: libncurses5-dev libncursesw5-dev
+Depends: libncurses5-dev, libncursesw5-dev
 Maintainer: Gustavo Bacagine <gustavo.bacagine@protonmail.com>
 Installed-Size: 
 Description: CTris is a command line Tetris program written in C++.

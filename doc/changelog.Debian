@@ -1,3 +1,10 @@
+ctris (1.1-3)
+ -- Gustavo Bacagine <gustavo.bacagine@protonmail.com> Mon, 22 Feb 2021 14:38
+
+    Bacagine Modifications 21.02.22
+    -------------------------------
+    Move data/htop.png to data/ctris.png
+
 ctris (1.1-2)
  -- Gustavo Bacagine <gustavo.bacagine@protonmail.com> Mon, 22 Feb 2021 14:24 
     
