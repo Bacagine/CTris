@@ -3,8 +3,8 @@
 #define GAME_WINDOW_H
 
 #include "window.h"
-#include "../../include/constants.h"
-#include "../../include/all_blocks.h"
+#include "constants.h"
+#include "all_blocks.h"
 
 class Block; 
 

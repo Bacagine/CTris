@@ -1,0 +1,393 @@
+commit 1e19c3a500d13ccc362380363f108171e16650de
+Author: Mitchel Paulin <Mitchel0022@gmail.com>
+Date:   Sun May 17 19:29:21 2020 -0400
+
+    Update README.md
+    
+    Added snapcraft badge
+
+commit 660a54eb53198be82f3dbb2074824ed37242588a
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat May 16 17:12:35 2020 -0400
+
+    Fixed bug where you could not exit on game over
+
+commit ce3315fe3ea2b9a00e1aac4396b68b579a453d3c
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat May 16 16:32:40 2020 -0400
+
+    Got snap ready to publish 1.1
+
+commit 16374ccea7414ccd03c21a1cfe4630c75c93e867
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat May 16 12:33:06 2020 -0400
+
+    Fixed bug where for loop was reading out of bounds causing undefined behaviour
+
+commit 4ef9a0b01e8e22494fd95e11bdae81fff71e62e7
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat May 16 11:46:15 2020 -0400
+
+    Fixed some spacing on the menu
+
+commit e8b6fa494e3ff8725a6208db967c224f2a75bf72
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat May 16 11:16:48 2020 -0400
+
+    Added control changes to the UI
+
+commit 259498230d83f81243ea52be3ccebaace86391c4
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat May 16 10:53:33 2020 -0400
+
+    Changed exit key and added arrow keys as movement options
+
+commit 82f4a6beb9bf41872f1c7df993ff3bda6f23f11e
+Author: Mitchel Paulin <Mitchel0022@gmail.com>
+Date:   Sun May 10 18:42:30 2020 -0400
+
+    Update README.md
+
+commit 18bd4624e6d4169545fdfeee1e83c1c1995d0557
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Mar 28 15:53:54 2020 -0400
+
+    Prepared project for snap release
+
+commit 505dc44068f77d4229e75f0e1702cdea55b92d0f
+Author: Mitchel Paulin <30714020+MitchelPaulin@users.noreply.github.com>
+Date:   Wed Jan 29 20:09:44 2020 -0500
+
+    Update README.md
+
+commit dfab9d6b9a729f32a214acf2f2f62f7f60a1f091
+Author: Mitchel Paulin <30714020+MitchelPaulin@users.noreply.github.com>
+Date:   Wed Jan 29 20:08:27 2020 -0500
+
+    Update README.md
+
+commit 996fd1d83f03a35ef7d71587e0a2c8a48c0853b4
+Author: Mitchel Paulin <30714020+MitchelPaulin@users.noreply.github.com>
+Date:   Mon Jan 27 23:39:47 2020 -0500
+
+    Update README.md
+
+commit 7c7f14d6299d5d2332ad40de010781ad53a89c02
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 22:59:49 2020 -0500
+
+    Fixed issue where game would take up system resources on game over screen
+
+commit dac85ea12a333ceb735e74cccb6c54cab9b5c121
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 21:17:29 2020 -0500
+
+    Added snap file for publishing
+
+commit e304104763126afbcc710913022c4d36166a2dac
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 20:36:58 2020 -0500
+
+    Makefile now creates bin directory for output
+
+commit f839b6f9c6ffff50b367cfb1fd3fe3445b747b4c
+Merge: 79a75a7 7c2f7b0
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 19:05:05 2020 -0500
+
+    Merge branch 'master' of https://github.com/MitchelPaulin/CTris
+
+commit 79a75a7137fb02cf728cc2d02c8245b592163ee8
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 19:04:53 2020 -0500
+
+    Updated makefile to use install tag
+
+commit 7c2f7b0f5e825a9ea1c30c77eb6a486a462e46d7
+Author: Mitchel Paulin <30714020+MitchelPaulin@users.noreply.github.com>
+Date:   Mon Jan 27 17:52:55 2020 -0500
+
+    Update README.md
+
+commit 07f531af008b6e16341be0ba5382f0ea4587c771
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 17:51:55 2020 -0500
+
+    Added another demo image
+
+commit 8688d7f52171e5851cf8b9dbfc562986610255fe
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 17:39:58 2020 -0500
+
+    Added game over screen
+
+commit 0b36e567d8a8c48c89fe6334b6ee331248df688d
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 17:18:26 2020 -0500
+
+    Fixed bug where piece could rotate outside of gameplay window
+
+commit e944ef67b6c88b10ab2cfbcec7078f52419bf07d
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 16:53:39 2020 -0500
+
+    Added collision detection after block rotation
+
+commit 9ccd8e844e9e8ceb5aa39f3c8b76c7200922c6ef
+Author: Mitchel Paulin <30714020+MitchelPaulin@users.noreply.github.com>
+Date:   Mon Jan 27 00:14:31 2020 -0500
+
+    Update README.md
+
+commit eea42031ceacb0713db89c44e00ea4d8f08fd865
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 00:11:08 2020 -0500
+
+    Added demo image
+
+commit 6118cc5b70a00374baebb2855f37b618597f4b1e
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Mon Jan 27 00:04:23 2020 -0500
+
+    Added piece rotation for all pieces
+
+commit 5ee2b9f2ecb26a53fa7f7de4b138a9c3d94a0d00
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sun Jan 26 16:33:02 2020 -0500
+
+    Added restart functionality
+
+commit e35b4ffeb6eb95e6dfb7bd26cfba7521e0f0fddd
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sun Jan 26 16:17:40 2020 -0500
+
+    Implemented scoring
+
+commit b267c5c39e4a9e10aa4115bb3632646a020e258e
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sun Jan 26 16:09:43 2020 -0500
+
+    Completed lines are now removed from play
+
+commit ea47009cd68cbf70eefe916d5e6c64361487ffc4
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sun Jan 26 15:37:33 2020 -0500
+
+    Switched over to use dynamic memory allocation in main, will make rotating easier
+
+commit d28efe9e976733267968cfa97bdbafb329e4767a
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 17:11:53 2020 -0500
+
+    Added direction enum to superclass
+
+commit baf98471b9d8e9ef0bf2a9618abef622b856ef2f
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 17:01:51 2020 -0500
+
+    Fixed comment
+
+commit 7f90bbe7ed37ba65427e1dbe77d1f10115b05745
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 17:00:52 2020 -0500
+
+    Fixed memory leak
+
+commit 05e5d0a9d8cfb90efeb9a1c6a92dbf304a52a76e
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 16:39:27 2020 -0500
+
+    Added game over logic
+
+commit e515ebf42954e7d01f8962b85abfa01ffed91040
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 16:26:43 2020 -0500
+
+    Fixed the next piece rendering to work better with the long piece
+
+commit efe1e40aaa5d00e5a2ccb332824a5e01db4bc65a
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 15:43:53 2020 -0500
+
+    You can now use space to drop the blocks
+
+commit 25a944c5f29aeea202e4e09aaaf8ab506c64b8cf
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 15:29:38 2020 -0500
+
+    Added block collision
+
+commit 07483d02908fe23afcb5ef87223f180988d0a8d3
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 15:20:04 2020 -0500
+
+    Cleaned up border_window file
+
+commit 7d2aebfdb16fc16e5a4013e6a17f7937b6441bf4
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 15:15:48 2020 -0500
+
+    Made the new piece display show the new piece
+
+commit 91dd2afc7f9f72edac6fa7eddafac5a7b2d76912
+Merge: 494cb4a bf5f501
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 11:28:59 2020 -0500
+
+    Merge branch 'master' of https://github.com/MitchelPaulin/CTris
+
+commit 494cb4aeffc9342c2a69c8d0a77925ffe18326e2
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Sat Jan 25 11:28:35 2020 -0500
+
+    Blocks no longer go off bottom of screen and added random block generation
+
+commit bf5f501b2edac775f542208fe867ab67776ae6f3
+Author: Mitchel Paulin <30714020+MitchelPaulin@users.noreply.github.com>
+Date:   Fri Jan 24 22:56:30 2020 -0500
+
+    Update README.md
+
+commit ea3b90cc333cb1d8771824f4d9394b3c79de89aa
+Author: Mitchel Paulin <30714020+MitchelPaulin@users.noreply.github.com>
+Date:   Fri Jan 24 22:53:25 2020 -0500
+
+    Update README.md
+
+commit 78aec8728478875fe87e9f8fc6e449890d4b33aa
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 22:25:20 2020 -0500
+
+    Made it so blocks cannot move off screen left or right
+
+commit bff8a3902108038366526083029c27dd489d2f60
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 22:11:20 2020 -0500
+
+    Added the last piece
+
+commit e6952414c46a1ba30eab79d9cb010b0e46365946
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 21:56:49 2020 -0500
+
+    Added new snake piece and lrighpiece
+
+commit 66ad84872cf983f63f0d6e170fde523902c41de4
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 21:44:36 2020 -0500
+
+    added square and lleft piece
+
+commit 68a0b1e59fa70341b7a0608fb359e18914a086af
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 21:23:19 2020 -0500
+
+    Added long piece
+
+commit be07620c52a8609fe8745bda747967286b493add
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 21:12:19 2020 -0500
+
+    Added function that allows you to draw block in next block spot
+
+commit 3fd0755db154b175e647b947d7ff87016b35abd8
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 20:23:36 2020 -0500
+
+    Added user input and block movement left and right
+
+commit 40d299d718aebddea47deaf6a2c16c30880cb6e1
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 19:19:10 2020 -0500
+
+    Got a block to draw to the screen and move down
+
+commit c192c7b4412faefe58e4d5a538556b8477529f7b
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 13:28:38 2020 -0500
+
+    Stated working on one of the pieces
+
+commit a2bb84d33588c574097eb62543e65c8239309f13
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 11:54:37 2020 -0500
+
+    Did some work outlining block super class
+
+commit 011b9fb8967fc310daaaafa2ff4209d54060431d
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 10:49:00 2020 -0500
+
+    reorganized project
+
+commit 08bdcccb33a93842613dbb8d483cb2dd9d9f9abf
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Fri Jan 24 01:12:58 2020 -0500
+
+    Added some game screen rendering capabilities
+
+commit 313bb8de2f2b887bb70855d939356adf5e2203fc
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 23:00:05 2020 -0500
+
+    Added a virtual refresh function for windows
+
+commit 96387b33a0fac7be1d5ede1b8cb9ab25643efc72
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 22:20:11 2020 -0500
+
+    Implemented the change score function
+
+commit 688719afd2f91b1ea9634350f1a529c507880657
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 22:04:21 2020 -0500
+
+    Finished rest of text for banner screen
+
+commit c9d927ccca1220482add4c7072df754886642251
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 21:41:54 2020 -0500
+
+    Put windows in their own folder
+
+commit b7bfce15783bb0e38299e0d54a48da8a398a16fc
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 21:30:25 2020 -0500
+
+    Updated make file
+
+commit e01fbe5ff5cf3c2221d67846f8b7514c618d5776
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 21:28:48 2020 -0500
+
+    Updated README
+
+commit 0fa4323ff4e76d41b3263849574669e2720dd1e2
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 21:27:28 2020 -0500
+
+    Added a make file
+
+commit a923b4a4227ae87241813f207f27595b253e477d
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 21:14:12 2020 -0500
+
+    Refactored the windows into two new classes
+
+commit 22f6b3c8fbc79f8ee7f12bf11c868832a20f45fd
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 20:23:36 2020 -0500
+
+    Added the banner window
+
+commit bd62a4476395426a302b00ec33a49822263287ad
+Author: MitchelPaulin <mitchel0022@gmail.com>
+Date:   Thu Jan 23 17:21:45 2020 -0500
+
+    Got everything to compile
+
+commit 98eb3cbe6d544f9e6ba3a438eb99e45669ec3575
+Author: Mitchel Paulin <30714020+MitchelPaulin@users.noreply.github.com>
+Date:   Thu Jan 23 17:06:11 2020 -0500
+
+    Initial commit

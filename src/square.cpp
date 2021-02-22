@@ -1,4 +1,4 @@
-#include "square.h"
+#include "../include/square.h"
 
 Square::Square(BLOCK_COLOR color, int row, int col)
 {

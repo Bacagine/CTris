@@ -1,4 +1,4 @@
-#include "l_right_piece.h"
+#include "../include/l_right_piece.h"
 
 LRightPiece::LRightPiece()
 {

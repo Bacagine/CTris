@@ -3,12 +3,12 @@
  * Developed by Gustavo Bacagine <gustavo.bacagine@protonmai.com>
  * 
  * Date: 18/02/2021
+ * Date of last modification: 22/02/2021
  */
 
 #ifndef _CTRIS_H
 #define _CTRIS_H
 
-#define VERSION "ctris 1.1"
 #define HELP    "Mitchel Paulin (C) 2020 - 2021.\n\
 Released under the MIT License.\n\n\
 CTris is a command line Tetris program written in C++. Made \n\

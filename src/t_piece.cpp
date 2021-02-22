@@ -1,4 +1,4 @@
-#include "t_piece.h"
+#include "../include/t_piece.h"
 
 TPiece::TPiece()
 {

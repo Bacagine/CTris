@@ -1,4 +1,4 @@
-#include "snake_right_piece.h"
+#include "../include/snake_right_piece.h"
 
 SnakeRightPiece::SnakeRightPiece()
 {

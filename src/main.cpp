@@ -2,7 +2,7 @@
  * 
  * Developed by Mitchel Paulin <Mitchel0022@gmail.com>
  * 
- * Date of last modification: 18/02/2021
+ * Date of last modification: 22/02/2021
  */
 
 #include <iostream>
@@ -12,8 +12,9 @@
 #include <unistd.h>
 #include <random>
 #include <locale.h>
-#include "windows/border_window.h"
-#include "windows/game_window.h"
+#include <config.h>
+#include "../include/border_window.h"
+#include "../include/game_window.h"
 #include "../include/constants.h"
 #include "../include/all_blocks.h"
 #include "../include/ctris.h"
@@ -26,7 +27,7 @@ int main(int argc, char **argv)
             puts(HELP);
         }
         else if(!strcmp(argv[1], "-v") || !strcmp(argv[1], "--version")){
-            std::cout << VERSION << std::endl;
+            std::cout << argv[0] << " " << VERSION << std::endl;
         }
         else if(!strcmp(argv[1], "--license")){
             std::cout << LICENSE << std::endl;
@@ -35,7 +36,7 @@ int main(int argc, char **argv)
             std::cout << DEV_INFO << std::endl;
         }
     }
-    else{
+    else if(argc == 1){
         setlocale(LC_CTYPE, ""); //allow unicode characters
         initscr();
         cbreak(); //disable buffering
@@ -214,6 +215,11 @@ int main(int argc, char **argv)
         delete (curPiece);
         delete (nextPiece);
         endwin();
+    }
+    else{
+        std::cerr << "\033[1;31mE:\033[m \033[1mInvalid arguments!\033[m" << std::endl;
+        std::cerr << "Please see " << argv[0] << " -h for help" << std::endl;
+        return 1;
     }
 	return 0;
 }

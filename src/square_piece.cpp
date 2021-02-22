@@ -1,4 +1,4 @@
-#include "square_piece.h"
+#include "../include/square_piece.h"
 
 SquarePiece::SquarePiece()
 {

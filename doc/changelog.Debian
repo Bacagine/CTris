@@ -1,0 +1,29 @@
+ctris (1.1-2)
+ -- Gustavo Bacagine <gustavo.bacagine@protonmail.com> Mon, 22 Feb 2021 14:24 
+    
+    Bacagine Modifications 21.02.22
+    --------------------------------
+    Delete compile.sh script
+    Delete makefile
+    Added autogen.sh
+    Added configure.ac
+    Added control file for debian packages
+    Added data directory
+    Added Makefile.am, doc/Makefile.am, data/Makefile.am
+          man/Makefile.am and src/Makefile.am
+    Move src/windows/*.cpp for src/
+    Move src/blocks/*.cpp for src/
+    Move src/windows/.h for include/
+    Move src/blocks/*.h for include/
+    Remove the directories -> src/windows and src/blocks
+    
+
+ctris (1.1-1) stable
+ -- Gustavo Bacagine <gustavo.bacagine@protonmail.com> Thu, 18 Feb 2021 16:49:40 -0300 --
+
+    Bacagine Modifications 21.02.18
+    -----------------------------
+    Added compile.sh script
+    Added Desktop File
+    Added a Man Page
+    Modifications in makefile

@@ -1,8 +1,8 @@
 #include <vector>
-#include "border_window.h"
+#include "../include/border_window.h"
 #include "ncurses.h"
 #include "string.h"
-#include "../../include/constants.h"
+#include "../include/constants.h"
 
 const int scoreX = 31;
 const int scoreY = 7;

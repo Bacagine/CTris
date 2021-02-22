@@ -1,4 +1,4 @@
-#include "long_piece.h"
+#include "../include/long_piece.h"
 
 LongPiece::LongPiece()
 {

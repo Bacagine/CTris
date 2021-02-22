@@ -1,3 +1,6 @@
+#ifndef _CONSTANTS_H
+#define _CONSTANTS_H
+
 #define WIDTH 58
 #define HEIGHT 24
 #define GAME_WIDTH 22
@@ -10,3 +13,5 @@
 #define BLOCK_FALL_SPEED 75
 #define BLOCK_TYPES 7
 #define EXIT_KEY 27
+
+#endif

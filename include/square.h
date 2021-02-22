@@ -2,7 +2,7 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-#include "../../include/constants.h"
+#include "constants.h"
 
 class Square
 {

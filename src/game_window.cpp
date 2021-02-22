@@ -1,4 +1,4 @@
-#include "game_window.h"
+#include "../include/game_window.h"
 #include "curses.h"
 
 GameWindow::GameWindow(int width, int height, int startY, int startX) : Window(width, height, startY, startX)

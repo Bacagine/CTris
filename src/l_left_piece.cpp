@@ -1,4 +1,4 @@
-#include "l_left_piece.h"
+#include "../include/l_left_piece.h"
 
 LLeftPiece::LLeftPiece()
 {
